@@ -4,7 +4,7 @@ Apellido2=input("Apellido materno ")
 Grado=input("Grado ")
 Color=input("Color preferido ")
 Peli=input("Pelicula favorita" )
-print("El alumno "+Nombre+" "+Apellido1+" "+Apellido2+" que cursa"+Grado+" ,cuyo color favorito es el "+Color+" y la pelicula favorita es "+Peli".")
+print("El alumno "+Nombre)+(" "+Apellido1)+(" "+Apellido2)+(" que cursa"+Grado)+(" ,cuyo color favorito es el "+Color)+(" y la pelicula favorita es "+Peli)+(".")
 
 #Algoritmo Activitat3
 #Escribir "Nombre del alumno" 
