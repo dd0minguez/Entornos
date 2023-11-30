@@ -1,7 +1,7 @@
 A=int(input("Introduce el valor de A: "))
 B=int(input("Introduce el valor de B: "))
 C=int(input("Introduce el valor de C: "))
-if A>0:
+if A<0:
     print("El resultado es: "+str(A*B*C))
 else:
     print("El resultado es: "+str(A+B+C))
