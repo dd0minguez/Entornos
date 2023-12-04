@@ -12,7 +12,7 @@ while not salir:
     #gestionar eventos dentro de juego
     for event in pygame.event.get():
         if event.type == pygame.QUIT    :
-            salir = true
+            salir = True
     teclas = pygame.key.get_pressed()
     if teclas[pygame.K_LEFT]:
         posIzda -=1
@@ -28,4 +28,4 @@ while not salir:
     pantalla.blit(avion, (posTop, posIzda))
     #redibujar el juego
     pygame.display.flip()
-    pygame.quit()
+pygame.quit()
