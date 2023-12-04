@@ -3,7 +3,8 @@ class Nave:
     def __init__(self) -> None:
        self.x=30
        self.y=30
-       self.imagenes=[pygame.image.load("avion.png"), pygame.image.load("avion2.png")] 
+       imagenes_cargadas=[pygame.image.load("nave1.png"), pygame.image.load("nave2.png")] 
+       self.imagenes=[pygame.transform.scale(imagenes_cargadas[0], (80,80)), pygame.transform.scale(imagenes_cargadas[1], (80,80))]
        self.contador=0
     def moveDerecha(self):
         self.x +=1
