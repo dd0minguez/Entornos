@@ -3,12 +3,26 @@ class Nave:
     def __init__(self) -> None:
        self.x=30
        self.y=30
-       self.imagen=pygame.image.load("avion.png")
+       self.imagenes=[pygame.image.load("avion.png"), pygame.image.load("avion2.png")] 
+       self.contador=0
     def moveDerecha(self):
         self.x +=1
+        pantalla = pygame.display.get_surface()
+        limite=pantalla.get_width()
+        self.x=min(self.x, limite-self.imagenes[0].get_width())
     
     def moverIzquierda(self):
         self.x -=1
+        pantalla = pygame.display.get_surface()
+        limite=0
+        self.x=max(self.x, limite)
 
-    def dibujar(self, pantalla):
-        pantalla.blit(self.imagen, (self.x, self.y))
+    def dibujar(self):
+        # aumento del contador
+        self.contador =(self.contador+1) % 40
+        # cojo el puntero de la pantalla
+        pantalla = pygame.display.get_surface()
+        # seleccionar la imagen que toca
+        seleccionada = self.contador // 20
+        #dibujar imagen
+        pantalla.blit(self.imagenes[seleccionada], (self.x, self.y))
