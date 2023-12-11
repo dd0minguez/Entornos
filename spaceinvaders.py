@@ -1,5 +1,5 @@
 import pygame
-from elementos import Nave
+from elementos import Nave, Fondo
 
 pygame.init()
 pantalla= pygame.display.set_mode((800,600))
@@ -14,6 +14,7 @@ posTop=30
 salir= False
 
 nave = Nave()
+fondo = Fondo()
 
 while not salir:
     #gestionar eventos dentro de juego
@@ -31,6 +32,8 @@ while not salir:
     #    posIzda += 1
     #gestionar cambios
     pantalla.fill((255,255,255))
+
+    fondo.dibujar()
     #pygame.draw.rect(pantalla, (255,255,255), pygame.Rect(posIzda,posTop,60,60))
     #pantalla.blit(avion, (posTop, posIzda))
     nave.dibujar()

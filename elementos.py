@@ -1,4 +1,5 @@
 import pygame
+import math
 class Nave:
     def __init__(self) -> None:
        self.x=30
@@ -27,3 +28,28 @@ class Nave:
         seleccionada = self.contador // 20
         #dibujar imagen
         pantalla.blit(self.imagenes[seleccionada], (self.x, self.y))
+
+class Fondo:
+    def __init__(self) -> None:
+        #localizar pantalla
+        pantalla = pygame.display.get_surface()
+        #Cargamos la imagen
+        imagen = pygame.image.load("bg.rotado.png")
+        # escalar la imagen para que encaje en el ancho de la pantalla
+        self.fondo = pygame.transform.scale(imagen, (pantalla.get_width(), imagen.get_height()))
+        #scroll
+        self.scroll = 0
+        # cuantas piezas de fondo necesitamos
+        self.piezas = math.ceil(pantalla.get_height()/ self.fondo.get_height()) +1
+
+    def dibujar(self):
+        #aumentar el scroll
+        self.scroll += 4
+        #localizar la pantalla
+        pantalla = pygame.display.get_surface()
+        #resetear el scroll
+        if self.scroll > self.fondo.get_height():
+            self.scroll = 0
+        #dibujamos el fondo
+        for i in range(0, self.piezas):
+            pantalla.blit(self.fondo, (0, -self.fondo.get_height() + i * self.fondo.get_height() + self.scroll))
