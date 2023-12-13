@@ -18,9 +18,13 @@ running = True
 posicion = (200, 200)
 nave = elementos2.Nave(posicion)
 
-##crear un grupo de Sprites
-grupo_sprites = pygame.sprite.Group(nave)
-#grupo_sprites =pygame.sprite.GroupElementos.Nave((100, 100))
+##crear un grupo de Sprites vacio
+grupo_sprites = pygame.sprite.Group()
+# añadimos una nave
+grupo_sprites.add(nave)
+# añadimos otra nave
+grupo_sprites.add(elementos2.Nave((100, 100)))
+
 #bucle principal
 while running:
     #definiremos el bucle a framerate que hacen definido
@@ -30,6 +34,13 @@ while running:
     for event in pygame.event.get():
         if event.type == pygame.QUIT:
             running = False
+
+    pantalla.fill((255,255,255))
+
+    # grupo_sprites.update()
+    grupo_sprites.draw(pantalla)
+
+    pygame.display.flip()
 
 #finalizamos el juego
 pygame.quit()
