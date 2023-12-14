@@ -24,16 +24,23 @@ grupo_sprites = pygame.sprite.Group()
 grupo_sprites.add(nave)
 # añadimos otra nave
 grupo_sprites.add(elementos2.Nave((100, 100)))
+#limites
 
 #bucle principal
 while running:
     #definiremos el bucle a framerate que hacen definido
     reloj.tick(FPS)
 
+    teclas = pygame.key.get_pressed()
+    if teclas[pygame.K_LEFT]:
+        nave.update()
+    if teclas[pygame.K_RIGHT]:
+        nave.moveDerecha()
     #gestionar la salida
     for event in pygame.event.get():
         if event.type == pygame.QUIT:
             running = False
+
 
     pantalla.fill((255,255,255))
 
