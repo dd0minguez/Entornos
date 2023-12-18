@@ -46,7 +46,7 @@ while running:
 
     # grupo_sprites.update()
     grupo_sprites.draw(pantalla)
-
+    #redibujar la pantalla
     pygame.display.flip()
 
 #finalizamos el juego
