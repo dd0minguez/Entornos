@@ -53,3 +53,6 @@ class Fondo:
         #dibujamos el fondo
         for i in range(0, self.piezas):
             pantalla.blit(self.fondo, (0, -self.fondo.get_height() + i * self.fondo.get_height() + self.scroll))
+class Bala:
+    def __init__(self) -> None:
+        pass

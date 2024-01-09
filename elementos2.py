@@ -1,6 +1,5 @@
 from typing import Any
 import pygame
-from pygame.sprite import _Group
 
 class Nave(pygame.sprite.Sprite):
     #constructor
