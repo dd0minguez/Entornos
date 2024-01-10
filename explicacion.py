@@ -14,9 +14,6 @@ pantalla = pygame.display.set_mode(tamanyo)
 reloj = pygame.time.Clock()
 FPS = 60
 
-#booleano de control
-running = True
-
 posicion = (200, 200)
 nave = elementos2.Nave(posicion)
 
@@ -26,32 +23,7 @@ grupo_sprites = pygame.sprite.Group()
 grupo_sprites.add(nave)
 # añadimos otra nave
 grupo_sprites.add(elementos2.Nave((100, 100)))
-#añadimos una bala
-#grupo_sprites.add(balas)
-#limites
 
-#bucle principal
-#while running:
-    #definiremos el bucle a framerate que hacen definido
- #   reloj.tick(FPS)
-
-  #  teclas = pygame.key.get_pressed()
-   # if teclas[pygame.K_LEFT]:
-   #     nave.update()
-    #if teclas[pygame.K_RIGHT]:
-     #   nave.moveDerecha()
-    #gestionar la salida
-    #for event in pygame.event.get():
-     #   if event.type == pygame.QUIT:
-      #      running = False
-
-
-    #pantalla.fill((255,255,255))
-
-    # grupo_sprites.update()
-    #grupo_sprites.draw(pantalla)
-    #redibujar la pantalla
-    #pygame.display.flip()
 def set_difficulty(value, difficulty):
     #Do the job here !
     pass
@@ -62,7 +34,10 @@ def start_the_game():
 
     global ultimo_enemigo_creado
     global reloj
-    global frecuencia_
+    global frecuencia_creacion_enemigo
+    global grupo_sprites_todos
+    global grupo_sprites_enemigos
+    global grupo_sprites_balas
     # Do the job here !
     while running:
     #definiremos el bucle a framerate que hacen definido
@@ -78,11 +53,32 @@ def start_the_game():
             if event.type == pygame.QUIT:
                 running = False
 
+        if not pausado:
+            #creacion de enemigos
+            momento_actual = pygame.time.get_ticks()
+            if (momento_actual > ultimo_enemigo_creado + frecuencia_creacion_enemigo):
+                cordX = random.randint(0, pantalla.get_width())
+                cordY = -200
+                # creamos el enemigo
+                enemigo = elementos2.enemigo((cordX, cordY))
+                #lo añadimos a los dos grupos: todos y enemigos
+                grupo_sprites_todos.add(enemigo)
+                grupo_sprites_enemigos.add(enemigo)
+                #actualizamos el momento del ultimo enemigo creado
+                ultimo_enemigo_creado = momento_actual
 
         pantalla.fill((255,255,255))
 
+
+
+
         # grupo_sprites.update()
         grupo_sprites.draw(pantalla)
+
+        #si pausado, escribirlo
+        if pausado:
+            texto = font.render("PAUSA", True, "White")
+            pantalla.blit(texto, (pantalla.get_width() / 2, pantalla.get_height() / 2))
         #redibujar la pantalla
         pygame.display.flip()
 

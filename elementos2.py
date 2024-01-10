@@ -50,7 +50,16 @@ class Fondo (pygame.sprite.Sprite):
             imagen_cargada, (pantalla.get_width(), imagen_cargada.get_height()))
         #creamos un rectangulo a partir de la imagen
         self.rect = self.image.get_rect()
-        #actualizar la posicion del rectangulo 
+        #actualizar la posicion del rectangulo para que coincida con "posicion"
+        self.rect.topleft = posicion
+
+    def update(self, *args: Any, **kwarhgs: Any) -> None:
+        self.rect.y += 1
+        #capturamos la pantalla
+        pantalla = pygame.display.get_surface()
+        if self.rect.y >= pantalla.get_height():
+            self.rect.y = - pantalla.get_height()
+
 class Bala (pygame.sprite.Sprite):
     def __init__(self) -> None:
         super().__init__()
