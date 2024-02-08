@@ -36,7 +36,9 @@ def pause():
         reloj.tick(60)
 
 def set_difficulty(value, set_difficulty):
-    pass
+    tubo_dificil = pygame.image.load("Imagenes/Tubo1.PNG")
+    tubo_dificil = pygame.transform.scale(tubo_dificil, (300,478))
+    tubo1_dificil_sprite = constructor.Tubo((600,0), tubo_dificil)
 def start_the_game():
     running = [True]
     global todos
