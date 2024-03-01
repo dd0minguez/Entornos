@@ -1,0 +1,95 @@
+{
+	"version": "2.0.0",
+	"tasks": [
+		{
+			"type": "gradle",
+			"id": "/Users/denisdominguez/Documents/Visual/Entornos/JavaProjectapp:runapp",
+			"script": "app:run",
+			"description": "Runs this project as a JVM application",
+			"group": "application",
+			"project": "app",
+			"buildFile": "/Users/denisdominguez/Documents/Visual/Entornos/JavaProject/app/build.gradle",
+			"rootProject": "JavaProject",
+			"projectFolder": "/Users/denisdominguez/Documents/Visual/Entornos/JavaProject",
+			"workspaceFolder": "/Users/denisdominguez/Documents/Visual/Entornos/JavaProject",
+			"args": "",
+			"javaDebug": false,
+			"problemMatcher": [
+				"$gradle"
+			],
+			"label": "gradle: app:run"
+		},
+		{
+			"type": "gradle",
+			"id": "/Users/denisdominguez/Documents/Visual/Entornos/JavaProjectapp:jarapp",
+			"script": "app:jar",
+			"description": "Assembles a jar archive containing the main classes.",
+			"group": "build",
+			"project": "app",
+			"buildFile": "/Users/denisdominguez/Documents/Visual/Entornos/JavaProject/app/build.gradle",
+			"rootProject": "JavaProject",
+			"projectFolder": "/Users/denisdominguez/Documents/Visual/Entornos/JavaProject",
+			"workspaceFolder": "/Users/denisdominguez/Documents/Visual/Entornos/JavaProject",
+			"args": "",
+			"javaDebug": false,
+			"problemMatcher": [
+				"$gradle"
+			],
+			"label": "gradle: app:jar"
+		},
+		{
+			"type": "gradle",
+			"id": "/Users/denisdominguez/Documents/Visual/Entornos/JavaProjectapp:compileJavaapp",
+			"script": "app:compileJava",
+			"description": "Compiles main Java source.",
+			"group": "other",
+			"project": "app",
+			"buildFile": "/Users/denisdominguez/Documents/Visual/Entornos/JavaProject/app/build.gradle",
+			"rootProject": "JavaProject",
+			"projectFolder": "/Users/denisdominguez/Documents/Visual/Entornos/JavaProject",
+			"workspaceFolder": "/Users/denisdominguez/Documents/Visual/Entornos/JavaProject",
+			"args": "",
+			"javaDebug": false,
+			"problemMatcher": [
+				"$gradle"
+			],
+			"label": "gradle: app:compileJava"
+		},
+		{
+			"type": "gradle",
+			"id": "/Users/denisdominguez/Documents/Visual/Entornos/JavaProjectapp:buildapp",
+			"script": "app:build",
+			"description": "Assembles and tests this project.",
+			"group": "build",
+			"project": "app",
+			"buildFile": "/Users/denisdominguez/Documents/Visual/Entornos/JavaProject/app/build.gradle",
+			"rootProject": "JavaProject",
+			"projectFolder": "/Users/denisdominguez/Documents/Visual/Entornos/JavaProject",
+			"workspaceFolder": "/Users/denisdominguez/Documents/Visual/Entornos/JavaProject",
+			"args": "",
+			"javaDebug": false,
+			"problemMatcher": [
+				"$gradle"
+			],
+			"label": "gradle: app:build"
+		},
+		{
+			"type": "gradle",
+			"id": "/Users/denisdominguez/Documents/Visual/Entornos/JavaProjectapp:cleanapp",
+			"script": "app:clean",
+			"description": "Deletes the build directory.",
+			"group": "build",
+			"project": "app",
+			"buildFile": "/Users/denisdominguez/Documents/Visual/Entornos/JavaProject/app/build.gradle",
+			"rootProject": "JavaProject",
+			"projectFolder": "/Users/denisdominguez/Documents/Visual/Entornos/JavaProject",
+			"workspaceFolder": "/Users/denisdominguez/Documents/Visual/Entornos/JavaProject",
+			"args": "",
+			"javaDebug": false,
+			"problemMatcher": [
+				"$gradle"
+			],
+			"label": "gradle: app:clean"
+		}
+	]
+}
