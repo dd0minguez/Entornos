@@ -16,11 +16,11 @@ class AppTest {
     }
     @Test
     public void testComptarElemets1() {
-        App gestor = new App(new int[] {3, 4, 6});
-        assertEquals(3, gestor.comptarElements());
+        App gestor = new App(new int[] {3, 4, 6, 8, 9});
+        assertEquals(5, gestor.comptarElements());
     }
     @Test
-    public void testComptarArrayBuit() {
+    public void testComptarElements2() {
         App gestor = new App(new int[] {});
         assertEquals(0, gestor.comptarElements());
     }
@@ -30,13 +30,38 @@ class AppTest {
         assertEquals(3, gestor.retornarTercer());
     }
     @Test
+    public void testRetornarTercer1() throws Exception {
+        App gestor = new App(new int[] {});
+        assertEquals(0, gestor.retornarTercer());
+    }
+    @Test
     public void testSumaElements() throws Exception {
         App gestor = new App(new int[] {1, 2, 3});
         assertEquals(6, gestor.sumaElements());
     }
     @Test
+    public void testSumaElements1() throws Exception {
+        App gestor = new App(new int[] {1, 2, 3, -4});
+        assertEquals(2, gestor.sumaElements());
+    }
+    @Test
+    public void testSumaElements2() throws Exception {
+        App gestor = new App(new int[] {});
+        assertEquals(0, gestor.sumaElements());
+    }
+    @Test
     public void testMitjanaElements() throws Exception {
         App gestor = new App(new int[] {1, 2, 3});
         assertEquals(2, gestor.mitjanaElements());
+    }
+    @Test
+    public void testMitjanaElements1() throws Exception {
+        App gestor = new App(new int[] {1, 2, 3, -4});
+        assertEquals(0.5, gestor.mitjanaElements());
+    }
+    @Test
+    public void testMitjanaElements2() throws Exception {
+        App gestor = new App(new int[] {});
+        assertEquals(0, gestor.mitjanaElements());
     }
 }
